@@ -12,10 +12,12 @@ function attackHandler() { // Attack Function
   currentMonsterHealth -= damage;
   const playerDamge = dealPlayerDamage(ATTACK_MONSTER_VALUE);
   currentPlayerHealth -= playerDamge;
-  if (currentMonsterHealth <= 0) { // Checking if Monster life in <= 0
+  if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) { // Checking if Monster life in <= 0
     alert('You Won!');
-  } else if (currentPlayerHealth <= 0) {
+  } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
     alert('You Lost!');
+  } else if (currentMonsterHealth < 0 && currentPlayerHealth < 0) {
+    alert('You have a draw!');
   }
 }
 
