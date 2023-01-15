@@ -44,6 +44,7 @@ function strongMonsterHandler() {
 
 function healPlayerHandler() {
   increasePlayerHealth(HEAL_VALUE);
+  currentPlayerHealth += HEAL_VALUE; // To update PlayerHealth
   endRound();
 }
 
