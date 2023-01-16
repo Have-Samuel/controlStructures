@@ -32,12 +32,17 @@ function endRound() {
   if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
     // Checking if Monster life in <= 0
     alert('You Won!');
-    reset();
   } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
     alert('You Lost!');
-    reset();
   } else if (currentMonsterHealth < 0 && currentPlayerHealth < 0) {
     alert('You have a draw!');
+  }
+
+  if (
+    currentMonsterHealth <= 0 && currentPlayerHealth > 0 ||
+    currentPlayerHealth <= 0 && currentMonsterHealth > 0 ||
+    currentMonsterHealth < 0 && currentPlayerHealth < 0
+  ) {
     reset();
   }
 }
