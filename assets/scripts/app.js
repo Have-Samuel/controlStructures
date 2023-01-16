@@ -43,8 +43,15 @@ function strongMonsterHandler() {
 }
 
 function healPlayerHandler() {
-  increasePlayerHealth(HEAL_VALUE);
-  currentPlayerHealth += HEAL_VALUE; // To update PlayerHealth
+  let healValue;
+  if (currentPlayerHealth >= maxChoosenLife - HEAL_VALUE) { // To update PlayerHealth
+    alrert("You can't heal more than your max initial health.");
+    healValue = maxChoosenLife - currentPlayerHealth;
+  } else {
+    healValue = HEAL_VALUE;
+  }
+  increasePlayerHealth(healValue);
+  currentPlayerHealth += healValue; 
   endRound();
 }
 
