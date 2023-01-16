@@ -3,6 +3,8 @@ const STRONG_MONSTER_ATTACK = 17;
 const ATTACK_MONSTER_VALUE = 14;
 const HEAL_VALUE = 20;
 
+prompt('Maximum life for you and the monster.', '100');
+
 let maxChoosenLife = 100;
 let currentMonsterHealth = maxChoosenLife;
 let currentPlayerHealth = maxChoosenLife;
