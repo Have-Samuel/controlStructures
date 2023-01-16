@@ -13,7 +13,7 @@ adjustHealthBars(maxChoosenLife) // Adjust maxLife both Monster and player
 function reset() {
   currentMonsterHealth = maxChoosenLife;
   currentPlayerHealth = maxChoosenLife;
-  resetGame();
+  resetGame(maxChoosenLife);
 }
 
 function endRound() {
@@ -39,9 +39,7 @@ function endRound() {
   }
 
   if (
-    currentMonsterHealth <= 0 && currentPlayerHealth > 0 ||
-    currentPlayerHealth <= 0 && currentMonsterHealth > 0 ||
-    currentMonsterHealth <= 0 && currentPlayerHealth <= 0
+    currentMonsterHealth <= 0 || currentPlayerHealth <= 0
   ) {
     reset();
   }
