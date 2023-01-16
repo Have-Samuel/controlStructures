@@ -5,10 +5,16 @@ const HEAL_VALUE = 20;
 
 const MODE_ATTACK = 'ATTACK';
 const MODE_STRONG_ATTACK = 'STRONG_ATTACK';
+const LOG_EVENT_PLAYER_ATTACK = 'PLAYER_ATTACK';
+const LOG_EVENT_STRONG_PLAYER_ATTACK = 'STRONG_PLAYER_ATTACK';
+const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
+const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
+const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 
 const enteredValue = promp('Maximum life for you and the monster.', '100');
 
 let maxChoosenLife = parseInt(enteredValue);
+let battleToLog = [];
 
 if (isNaN(enteredValue) || enteredValue < 0) {
   maxChoosenLife = 100;
@@ -19,6 +25,10 @@ let currentPlayerHealth = maxChoosenLife;
 let hasBonusLife = true;
 
 adjustHealthBars(maxChoosenLife) // Adjust maxLife both Monster and player
+
+function writeToLog(event) {
+  
+}
 
 function reset() {
   currentMonsterHealth = maxChoosenLife;
