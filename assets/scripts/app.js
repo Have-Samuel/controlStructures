@@ -34,14 +34,14 @@ function endRound() {
     alert('You Won!');
   } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
     alert('You Lost!');
-  } else if (currentMonsterHealth < 0 && currentPlayerHealth < 0) {
+  } else if (currentMonsterHealth <= 0 && currentPlayerHealth <= 0) {
     alert('You have a draw!');
   }
 
   if (
     currentMonsterHealth <= 0 && currentPlayerHealth > 0 ||
     currentPlayerHealth <= 0 && currentMonsterHealth > 0 ||
-    currentMonsterHealth < 0 && currentPlayerHealth < 0
+    currentMonsterHealth <= 0 && currentPlayerHealth <= 0
   ) {
     reset();
   }
