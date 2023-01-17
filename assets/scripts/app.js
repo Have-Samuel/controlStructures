@@ -130,15 +130,18 @@ function endRound() {
 }
 
 function monsterAttack(mode) {
-  let logEvent;
-  let maxDamage;
-  if (mode === MODE_ATTACK) {
-    maxDamage = ATTACK_VALUE;
-    logEvent = LOG_EVENT_PLAYER_ATTACK
-  } else if (mode === MODE_STRONG_ATTACK) {
-    maxDamage = STRONG_MONSTER_ATTACK;
-    logEvent =LOG_EVENT_STRONG_PLAYER_ATTACK
-  }
+  const logEvent =
+    mode === MODE_ATTACK
+      ? LOG_EVENT_PLAYER_ATTACK
+      : LOG_EVENT_STRONG_PLAYER_ATTACK;
+  const maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_MONSTER_ATTACK;
+  // if (mode === MODE_ATTACK) {
+  //   maxDamage = ATTACK_VALUE;
+  //   logEvent = LOG_EVENT_PLAYER_ATTACK
+  // } else if (mode === MODE_STRONG_ATTACK) {
+  //   maxDamage = STRONG_MONSTER_ATTACK;
+  //   logEvent = LOG_EVENT_STRONG_PLAYER_ATTACK
+  // }
   const damage = dealMonsterDamage(maxDamage);
   currentMonsterHealth -= damage;
   writeToLog(
@@ -161,7 +164,7 @@ function strongMonsterHandler() {
 function healPlayerHandler() {
   let healValue;
   if (currentPlayerHealth >= maxChoosenLife - HEAL_VALUE) { // To update PlayerHealth
-    alrert("You can't heal more than your max initial health.");
+    alert("You can't heal more than your max initial health.");
     healValue = maxChoosenLife - currentPlayerHealth;
   } else {
     healValue = HEAL_VALUE;
