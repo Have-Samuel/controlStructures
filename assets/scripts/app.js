@@ -232,8 +232,10 @@ function logToWriteHandler() {
   // }
   let i = 0;
   for (const logEntry of battleToLog) {
-    console.log(logEntry);
-    console.log(i);
+    console.log(`${i}`);
+    for (const key in logEntry) {
+      console.log(`${key} => ${logEntry[key]}`);
+    }
     i++;
   }
 }
