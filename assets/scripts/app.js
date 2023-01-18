@@ -223,8 +223,14 @@ function healPlayerHandler() {
 }
 
 function logToWriteHandler() {
-  for (let i = 0; i < 9; i++) {
-    console.log(i);
+  // for (let i = 0; i < 9; i++) {
+  //   console.log(i);
+  // }
+  
+  j = 0;
+  while (j < 3) {
+    console.log('------');
+    j++;
   }
 
   // for (let i = 0; i < battleToLog.length; i++) {
