@@ -227,8 +227,12 @@ function logToWriteHandler() {
     console.log(i);
   }
 
-  for (let i = 0; i < battleToLog.length; i++) {
-    console.log(battleToLog[i]);
+  // for (let i = 0; i < battleToLog.length; i++) {
+  //   console.log(battleToLog[i]);
+  // }
+
+  for (const logEntry of battleToLog) {
+    console.log(logEntry);
   }
 }
 
